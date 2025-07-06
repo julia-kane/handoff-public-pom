@@ -1,14 +1,14 @@
 
 describe('Hello world', () => {
-    it('works', () => {
-        cy.visit('https://www.handoff.ai/');
+    it('HomePage should be open by clicking on LOGO', () => {
+        cy.visit('/');
         cy.eyesOpen({
             appName: 'handoff.ai',
             testName: 'HomePage visual test',
             browser: [
             {width: 800, height: 600, name: 'firefox'},
             {width: 1024, height: 768, name: 'chrome'},
-            {deviceName: 'iPhone 14 Pro Pro' as any},
+            {deviceName: 'iPhone 15 Pro' as any},
         ]
         });
 
