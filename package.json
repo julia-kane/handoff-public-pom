@@ -1,9 +1,15 @@
 {
   "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.10",
     "cypress": "^14.5.1",
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@applitools/testgenai-cypress": "^0.8.23"
+    "@applitools/eyes-cypress": "^3.52.1"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   }
 }

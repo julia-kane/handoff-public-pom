@@ -1,16 +1,20 @@
 import { defineConfig } from "cypress";
-import { testGenAICypressTasksSetup } from "@applitools/testgenai-cypress/tasks";
+import eyesPlugin from '@applitools/eyes-cypress'
 
-export default defineConfig({
-    e2e: {
-        setupNodeEvents(on, config) {
-            // implement node event listeners here
-            testGenAICypressTasksSetup(on);
+export default eyesPlugin(
+    defineConfig({
+        viewportWidth: 1440,
+        viewportHeight: 900,
+
+        e2e: {
+            chromeWebSecurity: false,
+            env: {},
+            // baseUrl: '',
+            setupNodeEvents(on, config) {
+                // implement node event listeners here
+            },
+            supportFile: 'cypress/support/e2e.ts',
+
+            watchForFileChanges: false,
         },
-    },
-    env: {
-        applitoolsTestGenAI: {
-            autohealDataFolders: ['cypress/testgenai/autoheal'],
-        }
-    }
-});
+}));
