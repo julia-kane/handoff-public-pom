@@ -18,7 +18,7 @@ export default eyesPlugin(
                 APPLITOOLS_API_KEY: process.env.APPLITOOLS_API_KEY,
                 EYES_FAIL_AFTER_ALL_SPECS: false,
             },
-            baseUrl: process.env.CYPRESS_BASE_URL || 'http://localhost:8000/',
+            baseUrl: process.env.CYPRESS_BASE_URL || 'https://www.handoff.ai/',
 
             setupNodeEvents(on, config) {
                 console.log('Applitools API Key:', process.env.APPLITOOLS_API_KEY ? '✔️ set' : '❌ missing');
